@@ -1,0 +1,8 @@
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.bibtex
+
+bibtex_bibfiles:
+  - references.bib
+bibtex_default_style: 'plain'
+

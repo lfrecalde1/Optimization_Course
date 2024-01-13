@@ -1,0 +1,8 @@
+numpy==1.21.2
+scipy==1.7.2
+sympy
+jupyter
+matplotlib
+casadi==3.5.1
+pluggy==1.3.0
+sphinxcontrib-bibtex
