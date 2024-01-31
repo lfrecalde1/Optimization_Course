@@ -68,7 +68,7 @@ def main(robot):
     # Parameters of the robot
     r = 0.190/2
     l = 0.381
-    a = 0.02
+    a = 0.1
     L = [r, l ,a]
 
     # Get maximun velocities
@@ -93,9 +93,9 @@ def main(robot):
             he[:, k] = x_d[0:2, k] - x[0:2, k]
             # Control values generation
             #opti = QP_solver(QP, x_d[:, k], x[:, k], L)
-            #opti = QP_solver_all(QP, x_d[:, k], x[:, k], L)
-            u[:, k] = controlador(x[:, k], x_d[:, k], x_dp[:, k], k1, k2, L)
-            #u[:, k] = opti
+            opti = QP_solver_all(QP, x_d[:, k], x[:, k], L)
+            #u[:, k] = controlador(x[:, k], x_d[:, k], x_dp[:, k], k1, k2, L)
+            u[:, k] = opti
             w_wheels = conversion(u[:, k], L)
 
             # Send control values to the robot
